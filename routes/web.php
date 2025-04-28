@@ -4,6 +4,7 @@ use App\Http\Controllers\Andre;
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -31,4 +32,7 @@ Route::get('/welcome', function () {
  Route::get('/', [HomeController::class, 'index']);
  Route::get('/contact', [HomeController::class, 'contact']);
  Route::get('/Andre_view', [Andre::class, 'tampilkan']);
- 
+ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+ Route::post('/login', [AuthController::class, 'login']);
+ Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+ Route::post('/register', [AuthController::class, 'register']);
