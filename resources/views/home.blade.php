@@ -24,7 +24,7 @@
       <a href="#about" class="nav-link font-semibold hover:text-black transition">About</a>
       <a href="#contact" class="nav-link font-semibold hover:text-black transition">Contact</a>
     </div>
-    <a href="login.php" class="bg-white text-red-800 px-6 py-2 rounded-full font-bold hover:text-black transition">Sign Up</a>
+    <a href="login" class="bg-white text-red-800 px-6 py-2 rounded-full font-bold hover:text-black transition">Sign Up</a>
   </nav>
 
   <!-- Home -->

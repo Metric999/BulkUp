@@ -1,10 +1,14 @@
 <?php
 
-use App\Http\Controllers\Andre;
+
 use Illuminate\Support\Facades\Route;
-Use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
+use App\Http\Controllers\Andre;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TraineeProfileController;
+use App\Http\Controllers\TrainerProfileController;
+
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -24,9 +28,6 @@ Route::get('/welcome', function () {
     });
  });
 
-//  Route::get('/listbarang/{id}/{nama}', function($id, $nama){
-//    return view('list_barang', compact('id', 'nama'));
-// });
 
  Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
  Route::get('/', [HomeController::class, 'index']);
@@ -36,3 +37,7 @@ Route::get('/welcome', function () {
  Route::post('/login', [AuthController::class, 'login']);
  Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
  Route::post('/register', [AuthController::class, 'register']);
+ Route::get('/traineeprofile', [TraineeProfileController::class, 'showProfileForm'])->name('profile');
+ Route::post('/traineeprofile', [TraineeProfileController::class, 'saveProfile']);
+ Route::get('/trainerprofile', [TrainerProfileController::class, 'showProfileForm'])->name('trainer.profile');
+Route::post('/trainerprofile', [TrainerProfileController::class, 'saveProfile']);
